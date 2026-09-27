@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriN Pulse - Regenerative Agricultural Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-stone-50 text-stone-800 font-sans">
+    <nav class="bg-emerald-900 text-white p-4 shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-leaf text-emerald-400 text-2xl"></i>
+                <span class="text-xl font-bold tracking-wide">AgriN Pulse</span>
+                <span class="bg-emerald-700 text-emerald-200 text-xs px-2 py-1 rounded-full font-mono">BRICS DPI v2.4</span>
+            </div>
+            <div class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#dashboard" class="hover:text-emerald-300 transition">Dashboard</a>
+                <a href="#diagnostics" class="hover:text-emerald-300 transition">AI Diagnostics</a>
+                <a href="#subsidies" class="hover:text-emerald-300 transition">Subsidies & Schemes</a>
+                <a href="#dpi" class="hover:text-emerald-300 transition">BRICS Data Exchange</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-gradient-to-r from-emerald-800 to-teal-900 text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <h1 class="text-3xl md:text-5xl font-extrabold mb-3">Regenerative Agricultural Intelligence Platform</h1>
+                <p class="text-emerald-100 text-lg max-w-2xl">Empowering smallholder farmers across BRICS nations with real-time satellite telemetry, AI crop diagnostics, and instant government scheme intelligence.</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20 text-center min-w-[220px]">
+                <p class="text-xs text-emerald-200 font-semibold uppercase">Live Telemetry Status</p>
+                <p class="text-2xl font-bold text-emerald-400 mt-1"><i class="fa-solid fa-satellite text-sm"></i> Sentinel-2 Active</p>
+                <p class="text-xs text-stone-300 mt-1">Region: South Asia / Africa</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto p-6 space-y-12">
+        <!-- Dashboard Overview -->
+        <section id="dashboard" class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200">
+                <div class="flex justify-between items-center text-emerald-700 mb-2">
+                    <span class="text-sm font-semibold">Soil Moisture Index</span>
+                    <i class="fa-solid fa-droplet text-lg"></i>
+                </div>
+                <p class="text-3xl font-bold text-stone-900">34.2%</p>
+                <p class="text-xs text-emerald-600 mt-1"><i class="fa-solid fa-circle-check"></i> Optimal range for sowing</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200">
+                <div class="flex justify-between items-center text-amber-600 mb-2">
+                    <span class="text-sm font-semibold">Satellite NDVI Index</span>
+                    <i class="fa-solid fa-seedling text-lg"></i>
+                </div>
+                <p class="text-3xl font-bold text-stone-900">0.72</p>
+                <p class="text-xs text-stone-500 mt-1">Healthy vegetative canopy</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200">
+                <div class="flex justify-between items-center text-blue-600 mb-2">
+                    <span class="text-sm font-semibold">Local Weather Forecast</span>
+                    <i class="fa-solid fa-cloud-sun-rain text-lg"></i>
+                </div>
+                <p class="text-3xl font-bold text-stone-900">28°C</p>
+                <p class="text-xs text-blue-600 mt-1"><i class="fa-solid fa-umbrella"></i> Rain expected in 48h (80%)</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-200">
+                <div class="flex justify-between items-center text-purple-600 mb-2">
+                    <span class="text-sm font-semibold">Active Subsidies</span>
+                    <i class="fa-solid fa-hand-holding-dollar text-lg"></i>
+                </div>
+                <p class="text-3xl font-bold text-stone-900">14 Schemes</p>
+                <p class="text-xs text-purple-600 mt-1">4 Eligible for instant application</p>
+            </div>
+        </section>
+
+        <!-- AI Disease Diagnostics -->
+        <section id="diagnostics" class="bg-white rounded-2xl p-8 shadow-sm border border-stone-200">
+            <h2 class="text-2xl font-bold text-stone-900 mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-wand-magic-sparkles text-emerald-600"></i> AI Crop Health & Disease Diagnostics
+            </h2>
+            <p class="text-stone-600 text-sm mb-6">Upload or capture a photo of damaged leaves or stems to receive instant AI diagnostic feedback and eco-friendly treatment plans.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="border-2 border-dashed border-stone-300 rounded-2xl p-8 text-center bg-stone-50 hover:border-emerald-500 transition cursor-pointer">
+                    <i class="fa-solid fa-cloud-arrow-up text-4xl text-stone-400 mb-3"></i>
+                    <p class="font-medium text-stone-700">Drag & Drop Plant Image Here</p>
+                    <p class="text-xs text-stone-400 mt-1">Supports JPG, PNG, WEBP (Max 10MB)</p>
+                    <button onclick="runDiagnostics()" class="mt-4 bg-emerald-700 hover:bg-emerald-800 text-white px-5 py-2.5 rounded-xl font-medium text-sm transition">
+                        Run Gemini Diagnostics
+                    </button>
+                </div>
+
+                <div id="diag-results" class="bg-emerald-50/50 p-6 rounded-2xl border border-emerald-100 hidden">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <span class="bg-red-100 text-red-700 text-xs px-2.5 py-1 rounded-full font-semibold">High Severity</span>
+                            <h3 class="text-xl font-bold text-stone-900 mt-2">Tomato Early Blight (Alternaria solani)</h3>
+                        </div>
+                        <span class="text-emerald-700 font-bold text-sm bg-white px-3 py-1 rounded-lg border border-emerald-200">96.4% Match</span>
+                    </div>
+                    <div class="space-y-3 text-sm text-stone-700">
+                        <p><strong>Organic Treatment:</strong> Apply copper-based fungicide or bio-pesticide liquid containing <i>Bacillus subtilis</i> every 7 days.</p>
+                        <p><strong>Prevention:</strong> Ensure adequate plant spacing for air circulation and practice crop rotation with non-solanaceous crops.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subsidies & Schemes Section -->
+        <section id="subsidies" class="bg-white rounded-2xl p-8 shadow-sm border border-stone-200">
+            <h2 class="text-2xl font-bold text-stone-900 mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-building-columns text-emerald-600"></i> Government & Organisation Subsidies Intelligence
+            </h2>
+            <p class="text-stone-600 text-sm mb-6">Explore active financial aid, equipment subsidies, and crop insurance programs provided by governments and international bodies.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="border border-stone-200 p-5 rounded-xl bg-stone-50/50 hover:shadow-md transition">
+                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">PM-KISAN Financial Support</span>
+                    <h3 class="font-bold text-lg text-stone-900 mt-3">Direct Income Support Scheme</h3>
+                    <p class="text-xs text-stone-600 mt-2">Provides direct income support of ₹6,000 per year in three equal installments to smallholder farming families.</p>
+                    <div class="mt-4 pt-4 border-t border-stone-200 flex justify-between items-center">
+                        <span class="text-xs text-emerald-700 font-semibold"><i class="fa-solid fa-circle-check"></i> Eligible</span>
+                        <button class="text-xs bg-emerald-800 text-white px-3 py-1.5 rounded-lg">Apply Portal</button>
+                    </div>
+                </div>
+
+                <div class="border border-stone-200 p-5 rounded-xl bg-stone-50/50 hover:shadow-md transition">
+                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Sub-Mission on Agricultural Mechanization</span>
+                    <h3 class="font-bold text-lg text-stone-900 mt-3">Solar Pump & Machinery Subsidy</h3>
+                    <p class="text-xs text-stone-600 mt-2">Up to 50% to 80% subsidy on solar water pump installations and micro-irrigation equipment purchase.</p>
+                    <div class="mt-4 pt-4 border-t border-stone-200 flex justify-between items-center">
+                        <span class="text-xs text-emerald-700 font-semibold"><i class="fa-solid fa-circle-check"></i> Eligible</span>
+                        <button class="text-xs bg-emerald-800 text-white px-3 py-1.5 rounded-lg">Apply Portal</button>
+                    </div>
+                </div>
+
+                <div class="border border-stone-200 p-5 rounded-xl bg-stone-50/50 hover:shadow-md transition">
+                    <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2 py-1 rounded">BRICS Soil Restoration Fund</span>
+                    <h3 class="font-bold text-lg text-stone-900 mt-3">Regenerative Carbon Credit Incentive</h3>
+                    <p class="text-xs text-stone-600 mt-2">Direct payout incentives for adopting zero-tillage, bio-char enrichment, and organic cover crop rotation.</p>
+                    <div class="mt-4 pt-4 border-t border-stone-200 flex justify-between items-center">
+                        <span class="text-xs text-stone-500 font-semibold"><i class="fa-solid fa-clock"></i> Opens Oct 2026</span>
+                        <button class="text-xs bg-stone-300 text-stone-600 px-3 py-1.5 rounded-lg cursor-not-allowed">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BRICS DPI Exchange -->
+        <section id="dpi" class="bg-stone-900 text-white rounded-2xl p-8 shadow-sm">
+            <h2 class="text-2xl font-bold mb-2 flex items-center gap-2 text-emerald-400">
+                <i class="fa-solid fa-network-wired"></i> BRICS Digital Public Infrastructure (DPI) Exchange
+            </h2>
+            <p class="text-stone-400 text-sm mb-6">Cross-border telemetry data exchange for collaborative agricultural research across Brazil, Russia, India, China, and South Africa.</p>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm text-stone-300">
+                    <thead class="text-xs uppercase bg-stone-800 text-emerald-400">
+                        <tr>
+                            <th class="p-3">Dataset Name</th>
+                            <th class="p-3">Source Member</th>
+                            <th class="p-3">Update Frequency</th>
+                            <th class="p-3">Open API Access</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-stone-800">
+                        <tr>
+                            <td class="p-3 font-semibold text-white">Tropical Soil Microbiome Index</td>
+                            <td class="p-3">Brazil (EMBRAPA)</td>
+                            <td class="p-3">Daily</td>
+                            <td class="p-3"><span class="text-emerald-400 font-mono text-xs">REST API / Active</span></td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-semibold text-white">Monsoon Rainfall Predictive Model</td>
+                            <td class="p-3">India (ICAR)</td>
+                            <td class="p-3">Real-time</td>
+                            <td class="p-3"><span class="text-emerald-400 font-mono text-xs">REST API / Active</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-stone-900 border-t border-stone-800 text-center py-6 text-xs text-stone-500">
+        AgriN Pulse — Code for Communities Hackathon Submission | Developed by Team Humanoids
+    </footer>
+
+    <script>
+        function runDiagnostics() {
+            const results = document.getElementById('diag-results');
+            results.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
